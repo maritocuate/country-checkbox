@@ -4,6 +4,8 @@ React application that allows users to toggle the selection of different countri
 
 The user interface displays a card with checkboxes for each country and a "Select All" checkbox. Users can interact with the checkboxes to toggle the selection status of individual countries or select/deselect all countries simultaneously. The component provides a clear and user-friendly way to manage the selection of countries within the application.
 
+![screenshot](/public/screenshot-check.png?raw=true)
+
 ## Table of Contents
 
 - [Requirements](#requirements)
