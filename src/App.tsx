@@ -20,6 +20,9 @@ const initialState = {
   checkAll: false,
 }
 
+/**
+ * Reducer function for handling state updates based on action type.
+ */
 function reducer(state: AppState, action: AppActions) {
   const newState: AppState = { ...state }
 
