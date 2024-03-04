@@ -1,6 +1,5 @@
 import { ChangeEvent, useReducer } from 'react'
 import { Card } from './components/ui/card'
-
 import './App.css'
 
 type AppState = {
