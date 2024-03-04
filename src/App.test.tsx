@@ -10,7 +10,7 @@ describe('App', () => {
   beforeEach(() => {
     render(<App />)
 
-    allCheckbox = screen.getByLabelText('all')
+    allCheckbox = screen.getByTestId('all')
     indiaCheckbox = screen.getByTestId('india')
     usaCheckbox = screen.getByTestId('usa')
     franceCheckbox = screen.getByTestId('france')

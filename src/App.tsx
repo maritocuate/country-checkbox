@@ -25,13 +25,18 @@ const initialState = {
  */
 function reducer(state: AppState, action: AppActions) {
   const newState: AppState = { ...state }
+  let allOptionsSelected: boolean
 
   switch (action.type) {
     case 'toggle':
-      return {
-        ...state,
-        [action.payload as string]: !state[action.payload as string],
-      }
+      newState[action.payload as string] = !state[action.payload as string]
+
+      allOptionsSelected = Object.keys(newState)
+        .filter(key => key !== 'checkAll')
+        .every(key => newState[key])
+      newState.checkAll = allOptionsSelected
+
+      return newState
     case 'toggleAll':
       Object.keys(state).forEach(key => {
         newState[key] = action.payload as boolean
@@ -65,6 +70,7 @@ function App() {
               type="checkbox"
               checked={state.checkAll}
               onChange={handleCheckAllChange}
+              data-testid="all"
             />
             <span>
               <strong>Select All</strong>
@@ -76,6 +82,7 @@ function App() {
               type="checkbox"
               checked={state.india}
               onChange={handleChange}
+              data-testid="india"
             />
             <span>India</span>
           </label>
@@ -85,6 +92,7 @@ function App() {
               type="checkbox"
               checked={state.usa}
               onChange={handleChange}
+              data-testid="usa"
             />
             <span>USA</span>
           </label>
@@ -94,6 +102,7 @@ function App() {
               type="checkbox"
               checked={state.france}
               onChange={handleChange}
+              data-testid="france"
             />
             <span>France</span>
           </label>
