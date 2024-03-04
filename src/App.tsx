@@ -29,11 +29,15 @@ function reducer(state: AppState, action: AppActions) {
 
   switch (action.type) {
     case 'toggle':
+      // Toggle the state of the selected option
       newState[action.payload as string] = !state[action.payload as string]
 
+      // Check if all options are selected
       allOptionsSelected = Object.keys(newState)
         .filter(key => key !== 'checkAll')
         .every(key => newState[key])
+
+      // Update the checkAll state
       newState.checkAll = allOptionsSelected
 
       return newState
