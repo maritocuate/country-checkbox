@@ -1,6 +1,7 @@
 import { ChangeEvent, useReducer } from 'react'
 import { Card } from './components/ui/card'
 import './App.css'
+import Footer from './components/Footer'
 
 type AppState = {
   [key: string]: boolean
@@ -111,6 +112,7 @@ function App() {
           </label>
         </Card>
       </div>
+      <Footer />
     </main>
   )
 }
